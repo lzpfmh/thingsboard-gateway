@@ -32,21 +32,21 @@
       "converter": {
         "type": "json",
         "filterExpression": "",
-        "deviceNameJsonExpression": "${$.serialNumber}",
-        "deviceTypeJsonExpression": "${$.sensorType}",
+        "deviceNameJsonExpression": "${serialNumber}",
+        "deviceTypeJsonExpression": "${sensorType}",
         "timeout": 60000,
         "attributes": [
           {
             "type": "string",
             "key": "model",
-            "value": "${$.model}"
+            "value": "${model}"
           }
         ],
         "timeseries": [
           {
             "type": "double",
             "key": "temperature",
-            "value": "${$.temperature}"
+            "value": "${temperature}"
           }
         ]
       }
@@ -56,14 +56,14 @@
       "converter": {
         "type": "json",
         "filterExpression": "",
-        "deviceNameJsonExpression": "${$.sensorId}",
-        "deviceTypeJsonExpression": "${$.sensorType}",
+        "deviceNameJsonExpression": "${sensorId}",
+        "deviceTypeJsonExpression": "${sensorType}",
         "timeout": 60000,
         "timeseries": [
           {
             "type": "double",
             "key": "humidity",
-            "value": "${$.humidity}"
+            "value": "${humidity}"
           }
         ]
       }
@@ -84,7 +84,7 @@
   "connectRequests": [
     {
       "topicFilter": "sensors/connect",
-      "deviceNameJsonExpression": "${$.SerialNumber}"
+      "deviceNameJsonExpression": "${SerialNumber}"
     },
     {
       "topicFilter": "sensor/+/connect",
@@ -94,7 +94,7 @@
   "disconnectRequests": [
     {
       "topicFilter": "sensors/disconnect",
-      "deviceNameJsonExpression": "${$.SerialNumber}"
+      "deviceNameJsonExpression": "${SerialNumber}"
     },
     {
       "topicFilter": "sensor/+/disconnect",
